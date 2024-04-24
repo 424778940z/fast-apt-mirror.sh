@@ -11,13 +11,14 @@ branding:
   icon: settings
 
 inputs:
-  healthchecks: { default:   "20", description: "Number of mirrors from the mirrors list to check for availability and up-to-dateness." }
-  speedtests:   { default:   "10", description: "Maximum number of healthy mirrors to test for speed." }
-  parallel:     { default:    "2", description: "Number of parallel speed tests. May result in incorrect results because of competing connections but finds a suitable mirror faster." }
-  sample-size:  { default: "1024", description: "Number of kilobytes to download during the speed from each mirror." }
-  sample-time:  { default:    "3", description: "Maximum number of seconds within the sample download from a mirror must finish." }
+  healthchecks:     { default:   "20", description: "Number of mirrors from the mirrors list to check for availability and up-to-dateness." }
+  speedtests:       { default:   "10", description: "Maximum number of healthy mirrors to test for speed." }
+  parallel:         { default:    "2", description: "Number of parallel speed tests. May result in incorrect results because of competing connections but finds a suitable mirror faster." }
+  sample-size:      { default: "1024", description: "Number of kilobytes to download during the speed from each mirror." }
+  sample-time:      { default:    "3", description: "Maximum number of seconds within the sample download from a mirror must finish." }
+  exclude-current:  { default: "true", description: "If specified, don't include the currently configured APT mirror in the speed tests." }
 
-  repo-name:   { default: "vegardit/fast-apt-mirror.sh", description: "Repository containing the fast-apt-mirror.sh script" }
+  repo-name:   { default: "424778940z/fast-apt-mirror.sh", description: "Repository containing the fast-apt-mirror.sh script" }
   repo-branch: { default: "v1", description: "Version (i.e. github branch) of the fast-apt-mirror.sh script to use" }
 
 runs:

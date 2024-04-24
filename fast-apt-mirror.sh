@@ -187,16 +187,16 @@ function find_fast_mirror() {
   #
   while [ $# -gt 0 ]; do
     case $1 in
-      -p|--parallel)  assert_option_is_int "$1" "$2"; shift; local download_parallel=$1 ;;
-      --healthchecks) assert_option_is_int "$1" "$2"; shift; local max_healthchecks=$1 ;;
-      --speedtests)   assert_option_is_int "$1" "$2"; shift; local max_speedtests=$1 ;;
-      --sample-size)  assert_option_is_int "$1" "$2"; shift; local sample_size_kb=$1 ;;
-      --sample-time)  assert_option_is_int "$1" "$2"; shift; local sample_time_secs=$1 ;;
-      --apply)             local apply=true ;;
-      --exclude-current)   local exclude_current=true ;;
-      --ignore-sync-state) local ignore_sync_state=true ;;
-      --verbose)           local verbosity=$(( ${verbosity:-0} + 1 )) ;;
-      -+(v))               local verbosity=$(( ${verbosity:-0} + ${#1} - 1 )) ;;
+      -p|--parallel)     assert_option_is_int "$1" "$2"; shift; local download_parallel=$1 ;;
+      --healthchecks)    assert_option_is_int "$1" "$2"; shift; local max_healthchecks=$1 ;;
+      --speedtests)      assert_option_is_int "$1" "$2"; shift; local max_speedtests=$1 ;;
+      --sample-size)     assert_option_is_int "$1" "$2"; shift; local sample_size_kb=$1 ;;
+      --sample-time)     assert_option_is_int "$1" "$2"; shift; local sample_time_secs=$1 ;;
+      --apply)                local apply=true ;;
+      --exclude-current) assert_option_is_int "$1" "$2"; shift; local exclude_current=$1 ;;
+      --ignore-sync-state)    local ignore_sync_state=true ;;
+      --verbose)              local verbosity=$(( ${verbosity:-0} + 1 )) ;;
+      -+(v))                  local verbosity=$(( ${verbosity:-0} + ${#1} - 1 )) ;;
       --help)
         echo "Usage: $(basename "$0") find [OPTION]...";
         echo
